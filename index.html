@@ -370,6 +370,17 @@ img, svg { display: block; max-width: 100%; }
 .success-title { font-family: var(--ff-display); font-weight: 700; font-size: clamp(22px, 3vw, 26px); letter-spacing: -0.01em; }
 .success-desc { color: var(--text-2); font-size: 15px; line-height: 1.55; margin-top: 12px; max-width: 380px; margin-left: auto; margin-right: auto; }
 .success-tag { font-family: var(--ff-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--green); opacity: 0.7; text-transform: uppercase; margin-top: 24px; }
+/* Discord CTA inside the success state — drives signups to Discord
+   at peak engagement (right after they confirm their spot). */
+.success-cta-prompt {
+  margin: 28px auto 0; max-width: 360px;
+  color: var(--text-2); font-size: 14px; line-height: 1.55;
+}
+.success-cta { margin-top: 14px; }
+.success-cta .discord-icon {
+  width: 20px; height: 15px; flex-shrink: 0;
+  display: inline-block; vertical-align: middle;
+}
 .spinner { width: 16px; height: 16px; border: 2px solid rgba(12,14,16,0.3); border-top-color: #0c0e10; border-radius: 50%; animation: gg-spin 0.8s linear infinite; flex-shrink: 0; }
 
 .final-cta-card { position: relative; padding: clamp(36px, 7vw, 64px) clamp(20px, 5vw, 40px); text-align: center; overflow: hidden; }
@@ -1779,6 +1790,17 @@ img, svg { display: block; max-width: 100%; }
           <div class="success-title">You're on the list.</div>
           <div class="success-desc">We'll let you know the moment early access opens. Watch your inbox.</div>
           <div class="success-tag">· Spot secured ·</div>
+          <p class="success-cta-prompt">Founding members are hanging out in the Discord — come get early signal previews.</p>
+          <a class="btn-primary success-cta" href="https://discord.gg/XK3Hwd43sz" target="_blank" rel="noopener noreferrer">
+            <!-- Official Discord brand mark (Clyde), filled in dark
+                 #0c0e10 to read on the neon green button background.
+                 Inline SVG so it's bulletproof — no image-load failure,
+                 no flash of missing icon, scales crisply at any size. -->
+            <svg class="discord-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+              <path fill="#0c0e10" d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.08 0A72.37 72.37 0 0 0 45.67 0a105.89 105.89 0 0 0-26.24 8.09C2.79 33.4-1.71 58.1.54 82.45a105.73 105.73 0 0 0 32.17 16.3 77.7 77.7 0 0 0 6.89-11.16 68.42 68.42 0 0 1-10.85-5.18c.91-.67 1.8-1.36 2.66-2.08 20.87 9.54 43.54 9.54 64.16 0 .87.72 1.76 1.41 2.67 2.08a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.15 105.25 105.25 0 0 0 32.19-16.3c2.64-28.22-4.5-52.69-18.75-74.38zM42.45 65.69C36.18 65.69 31 59.98 31 52.98s5-12.71 11.42-12.71 11.57 5.77 11.46 12.71c0 7-5.08 12.71-11.43 12.71zm42.24 0c-6.27 0-11.44-5.71-11.44-12.71s5-12.71 11.44-12.71 11.56 5.77 11.44 12.71c0 7-5.06 12.71-11.44 12.71z"/>
+            </svg>
+            Join the Discord
+          </a>
         </div>
       </div>
     </div>
