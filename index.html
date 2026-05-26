@@ -601,8 +601,16 @@ img, svg { display: block; max-width: 100%; }
   font-family: var(--ff-mono); font-size: 9px; color: var(--green);
 }
 .h2h-chart {
-  flex: 1; display: flex; align-items: flex-end;
-  gap: 5px; min-height: 100px;
+  /* Explicit height so the bars' percentage heights resolve cleanly.
+     Without this, `flex: 1 + min-height: 100px` left the bars'
+     `height: 91%` etc. unable to compute a value (no determinate
+     parent height), so bars collapsed to content height and the
+     proportional bar chart never rendered. 140px gives all bars
+     room to render at full % without crowding the card. */
+  flex: 0 0 auto;
+  display: flex; align-items: flex-end;
+  gap: 5px;
+  height: 140px;
   padding-bottom: 18px; position: relative;
   margin-bottom: 8px;
 }
